@@ -1,0 +1,40 @@
+/*
+ *
+ **	Custom jQuery  
+ **	CSS relating to each component is indented
+ *
+ */ 
+
+/*  
+** Global settings 
+*/
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+
+/*  
+** Toolbar 
+*/
+
+.toolbar-container {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 76px;
+	background-color: #000;
+}
+	
+	.toolbar {
+		height: 75px;
+		position: absolute;
+		bottom: 0px;
+		right:25%;
+   		left:50%;
+    	margin-left: -25%;
+		background-color: #fff;
+
+	}

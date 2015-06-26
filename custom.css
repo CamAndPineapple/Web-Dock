@@ -63,7 +63,7 @@ body {
 ** Code snippet
 */
 	
-	.code {
+	#code {
 		font-family: 'Lato'; sans-serif;
 		margin: 0 auto;
 		margin-top: 50px;
@@ -74,6 +74,12 @@ body {
 		color: #D2FB5B;
 		border: 1px solid #D2FB5B;
 		border-radius: 3px;
+		text-align: left;
+		line-height: 17px;
+	}
+
+	.hidden {
+		display: none;
 	}
 
 

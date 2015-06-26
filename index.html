@@ -32,7 +32,7 @@
     </p>
     <p class="page-kicker"> Made with pure <span id="js" style="color:#FFFF5B;">Javascript</span>. </p>
 
-    <div class="code">
+    <div id="code" class="hidden">
     <code class="code-text">
         var elements = document.getElementsByClassName('dock-icon');
         <br></br>
@@ -42,14 +42,14 @@
         <br></br>
         var titleDiv = document.createElement("div");
         <br></br>
+        <br></br>
          <span style="color:#A5A5A5">// assign id to edit div in custom.css</span>
         <br></br>
         titleDiv.id = "title-div"
         <br></br>
         var arrayOfIds = [];
         <br></br>
-
-
+        <br></br>
         <span style="color:#A5A5A5">// store each dock icon's id in an array</span>
         <br></br>
          <span style="color:#A5A5A5">// ids are used as the title of the dock icon</span>
@@ -59,6 +59,7 @@
         arrayOfIds.push(elements[i].id);
         <br></br>
         }
+        <br></br>
         <br></br>
         <span style="color:#A5A5A5">// iterate over the array of ids to add title on hover</span>
         <br></br>
@@ -78,13 +79,20 @@
             };
             <br></br>
         })(i), false);
-
-         <span style="color:#A5A5A5">// remove title-div when mouse out</span>             
+            <br></br>
+            <br></br>
+         <span style="color:#A5A5A5">// remove title-div when mouse out</span>  
+         <br></br>           
         elements[i].addEventListener('mouseout', (function(i) {
+        <br></br>
             return function() {
+            <br></br>
                 elements[i].removeChild(titleDiv);
+                <br></br>
             };
+            <br></br>
         })(i), false);
+        <br></br>
         }
     </code>
     </div>

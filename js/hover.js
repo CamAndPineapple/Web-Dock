@@ -4,11 +4,10 @@
 
 
 var elements = document.getElementsByClassName('dock-icon');
-/*
-var js = document.getElementById('js');
-var bodyDiv = document.getElementById('body-div');
-*/
 var titleDiv = document.createElement("div");
+var codeSnippet = document.getElementById("code");
+var js = document.getElementById("js");
+js.style.cursor = "pointer";
 // assign id to edit div in custom.css
 titleDiv.id = "title-div";
 var arrayOfIds = [];
@@ -39,11 +38,15 @@ for (var i = 0; i < arrayOfIds.length; i++) {
 	})(i), false);
 }
 
-/*function showCode() {
-
+function showCode() {
+	if (codeSnippet.className === "hidden") {
+	codeSnippet.className = "";
+	js.appendChild(codeSnippet);
+	} else {
+		codeSnippet.className = "hidden";
+	}
 
 }
 
 js.addEventListener('click', showCode, false); 
 
-*/

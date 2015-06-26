@@ -1,10 +1,5 @@
 var elements = document.getElementsByClassName('dock-icon');
-var titleDiv = document.createElement("div");
-	titleDiv.style.width = "100%";
-	titleDiv.style.height = "30px";
-	titleDiv.style.background = "black";
-	titleDiv.style.color = "#fff";
-	titleDiv.style.fontSize = "15px";
+var titleDiv = document.getElementById('title-div');
 var arrayOfIds = [];
 
 

@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Responsive Web Dock </title> 
+    <title> Navigation Dock </title> 
 
     <!-- CSS -->
     <link href="custom.css" rel="stylesheet">
 
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -23,21 +24,82 @@
 </head>
     
 <body>
-<h1 class="page-title"> Responsive Web Dock </h1>
-<div class="test-div"></div>
+
+<div id="body-div">
+    <h1 class="page-title"> Navigation Dock </h1>
+    <p class="page-kicker"> A navigation dock fixed to the bottom of the page, <br></br>
+        inspired by Apple's OS X dock
+    </p>
+    <p class="page-kicker"> Made with pure <span id="js" style="color:#FFFF5B;">Javascript</span>. </p>
+
+    <div class="code">
+    <code class="code-text">
+        var elements = document.getElementsByClassName('dock-icon');
+        <br></br>
+        var js = document.getElementById('js');
+        <br></br>
+        var bodyDiv = document.getElementById('body-div');
+        <br></br>
+        var titleDiv = document.createElement("div");
+        <br></br>
+         <span style="color:#A5A5A5">// assign id to edit div in custom.css</span>
+        <br></br>
+        titleDiv.id = "title-div"
+        <br></br>
+        var arrayOfIds = [];
+        <br></br>
+
+
+        <span style="color:#A5A5A5">// store each dock icon's id in an array</span>
+        <br></br>
+         <span style="color:#A5A5A5">// ids are used as the title of the dock icon</span>
+        <br></br>
+        for (var i = 0; i < elements.length; i++) {
+        <br></br>
+        arrayOfIds.push(elements[i].id);
+        <br></br>
+        }
+        <br></br>
+        <span style="color:#A5A5A5">// iterate over the array of ids to add title on hover</span>
+        <br></br>
+        for (var i = 0; i < arrayOfIds.length; i++) {
+        <br></br>
+        <br></br>
+         <span style="color:#A5A5A5">// add title-div when mouse over</span>
+        <br></br>
+        elements[i].addEventListener('mouseover', (function(i) {
+        <br></br>
+            return function() {
+            <br></br>
+                titleDiv.innerHTML = arrayOfIds[i];
+                <br></br>
+                elements[i].appendChild(titleDiv);
+                <br></br>
+            };
+            <br></br>
+        })(i), false);
+
+         <span style="color:#A5A5A5">// remove title-div when mouse out</span>             
+        elements[i].addEventListener('mouseout', (function(i) {
+            return function() {
+                elements[i].removeChild(titleDiv);
+            };
+        })(i), false);
+        }
+    </code>
+    </div>
+</div> 
 
 
 <div class="toolbar-container">
 	<div class="toolbar" id="toolbar">
 		<ul class="dock-icons-list">
-			<li class="dock-icon" id="home"><img class="dock-img"  src="../images/home.png"></li>
-			<li class="dock-icon" id="hours"><img class="dock-img" src="../images/home.png"></li>
-			<li class="dock-icon" id="staff"><img class="dock-img" src="../images/home.png"></li>
-			<li class="dock-icon" id="history"><img class="dock-img"  src="../images/home.png"></li>
-			<li class="dock-icon" id="books"><img class="dock-img"  src="../images/home.png"></li>
-			<li class="dock-icon" id="shop"><img class="dock-img"  src="../images/home.png"></li>
-			<li class="dock-icon" id="store"><img class="dock-img"  src="../images/home.png"></li>
-			<li class="dock-icon" id="etc"><img class="dock-img"  src="../images/home.png"></li>
+			<li class="dock-icon" id="Home"><img class="dock-img"  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAEbklEQVR4nO2ab2gTZxzHL7AX9cWQQma5+z00tGA6abuJDQxRh1PKUGYn7MXscGNgB7UvRAQRJkhfiGyDgojgC8WC4otmKCvJPU9TommTBtJ2WJtSTI0pNbHNH5lI0QiK/e3NbmR31zTNJbm4Pl/4vrzn+X4/uXvunrsIAhcXFxeXOXIKwianIGwyO4cpctbWbqYAAQoQcNbWbjY7T0V1p65uCwWYYoQgIwQpwNSdurotZueqiGRRtFGAR0r5HAiPZFG0mZ2vrHKL4jYKkFCXz4GQcIviNrNzlkWyKDoowLPVyudAeCaLosPsvCWVi5C9FGBZXTZ0rBtDx7r1ICy7CNlrdu6SyC1JHYyQ1+qSkydPYzL1EpOplzh58rTe2fDaLUkdemMGx9PO4EQa9VzpfnlFAX5gAG/V5e6fO4+pTPY/vn/uvBYCwFsZ4Hv1uO8FAJmQEwxgRV0q3HdZU15xuO+yHoQVmZATuWNXPQCZkF5Nkfp6nL12c9Xyimev3URWX68BIRPSq4xfzQAslJBL6vBDDQ0YGRhcs7ziyMAgDjU0aBdHQi4JgmCpSgC9gvABA7ihDu3Zaseo+27B5RVH3XfRs9Wud0ncCASf/l5VAPoFoYYBDKrDDje3YMwXWnd5xTFfCIebWzQQhvcfWBwbi1cHgEGr9UMG4FOH9O5ow4VQuOjyihdCYfTuaNNC+PJrHBudNxeAS5KsjJA/1eHu7dyF8QdRw+UVxx9E8d7OXRoIns/bMeCNmAOAAhAG8FAdamRfOyYiiZKVV5yIJHBkX7sWwme7MUDDlQUgA9gpwBN1GP+hw7gYS+ctctXzMK/zHbsYS6P/0GENhKHtDvT/MVEZADLAdgaQVocIHjmKS/Hna/6Slm+v5vVaxy/Fn2PwyFEthOZW9A/4ywvALYp7GCEvNJuarm5MLi0XdCobBZDKZDG5tIyhLu0mitk/Rrco7ilLeUbIQUpIVrOpOXUGk+lXBV/LpQCQymQxmX6Fk6fO6D0sZRkhB0taXpakTkbIG/VkU70X1r2YlQqA4qneC3o7yTeyJHWWpDwFOE4B3mk2NRevFLWalxpAKpPF8MUreu8U3lGA40bLn9XQtdlw9vqtooKWC0Aqk8XZ67eQ2Wx6IM4W093CAPo0K21jI845XUWHLCeAVCaLc04XDjU26u0f+gRBsBTcnklSj+aBw96EUeozFDCVyWLHL568Njp+lPrQY2/SQpCknoIB9AtCDSVk9N/n7pZWnB+ZMByuUp4fmcDhltbcO8NovyDUrOsa+OfLzbS3zYEL4zOml1qvF8Zn0NvmQAowXfSXp9tWqxiffmx6mWIdn36Mt61WsajyiswuYdSGynMAHIBxALGffzTk9x5AZP9HhswBcAAcAAfAAXAAHAAHsGEA/NXzBca+sm1cAPjbT7j43accwIYFsPJrFz7t/GTjAnjyTRPOtddVD4DV/opSqI3eBYzOzwFwABwAB8ABGAIwnnYa8UzXgbgRG53fMAAuLi6u/7P+BlOlIznDJeqvAAAAAElFTkSuQmCC" width="64" height="64"></li>
+			<li class="dock-icon" id="About"><img class="dock-img"  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAEbklEQVR4nO2ab2gTZxzHL7AX9cWQQma5+z00tGA6abuJDQxRh1PKUGYn7MXscGNgB7UvRAQRJkhfiGyDgojgC8WC4otmKCvJPU9TommTBtJ2WJtSTI0pNbHNH5lI0QiK/e3NbmR31zTNJbm4Pl/4vrzn+X4/uXvunrsIAhcXFxeXOXIKwianIGwyO4cpctbWbqYAAQoQcNbWbjY7T0V1p65uCwWYYoQgIwQpwNSdurotZueqiGRRtFGAR0r5HAiPZFG0mZ2vrHKL4jYKkFCXz4GQcIviNrNzlkWyKDoowLPVyudAeCaLosPsvCWVi5C9FGBZXTZ0rBtDx7r1ICy7CNlrdu6SyC1JHYyQ1+qSkydPYzL1EpOplzh58rTe2fDaLUkdemMGx9PO4EQa9VzpfnlFAX5gAG/V5e6fO4+pTPY/vn/uvBYCwFsZ4Hv1uO8FAJmQEwxgRV0q3HdZU15xuO+yHoQVmZATuWNXPQCZkF5Nkfp6nL12c9Xyimev3URWX68BIRPSq4xfzQAslJBL6vBDDQ0YGRhcs7ziyMAgDjU0aBdHQi4JgmCpSgC9gvABA7ihDu3Zaseo+27B5RVH3XfRs9Wud0ncCASf/l5VAPoFoYYBDKrDDje3YMwXWnd5xTFfCIebWzQQhvcfWBwbi1cHgEGr9UMG4FOH9O5ow4VQuOjyihdCYfTuaNNC+PJrHBudNxeAS5KsjJA/1eHu7dyF8QdRw+UVxx9E8d7OXRoIns/bMeCNmAOAAhAG8FAdamRfOyYiiZKVV5yIJHBkX7sWwme7MUDDlQUgA9gpwBN1GP+hw7gYS+ctctXzMK/zHbsYS6P/0GENhKHtDvT/MVEZADLAdgaQVocIHjmKS/Hna/6Slm+v5vVaxy/Fn2PwyFEthOZW9A/4ywvALYp7GCEvNJuarm5MLi0XdCobBZDKZDG5tIyhLu0mitk/Rrco7ilLeUbIQUpIVrOpOXUGk+lXBV/LpQCQymQxmX6Fk6fO6D0sZRkhB0taXpakTkbIG/VkU70X1r2YlQqA4qneC3o7yTeyJHWWpDwFOE4B3mk2NRevFLWalxpAKpPF8MUreu8U3lGA40bLn9XQtdlw9vqtooKWC0Aqk8XZ67eQ2Wx6IM4W093CAPo0K21jI845XUWHLCeAVCaLc04XDjU26u0f+gRBsBTcnklSj+aBw96EUeozFDCVyWLHL568Njp+lPrQY2/SQpCknoIB9AtCDSVk9N/n7pZWnB+ZMByuUp4fmcDhltbcO8NovyDUrOsa+OfLzbS3zYEL4zOml1qvF8Zn0NvmQAowXfSXp9tWqxiffmx6mWIdn36Mt61WsajyiswuYdSGynMAHIBxALGffzTk9x5AZP9HhswBcAAcAAfAAXAAHAAHsGEA/NXzBca+sm1cAPjbT7j43accwIYFsPJrFz7t/GTjAnjyTRPOtddVD4DV/opSqI3eBYzOzwFwABwAB8ABGAIwnnYa8UzXgbgRG53fMAAuLi6u/7P+BlOlIznDJeqvAAAAAElFTkSuQmCC" width="64" height="64"></li>
+			<li class="dock-icon" id="Store"><img class="dock-img"  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAEbklEQVR4nO2ab2gTZxzHL7AX9cWQQma5+z00tGA6abuJDQxRh1PKUGYn7MXscGNgB7UvRAQRJkhfiGyDgojgC8WC4otmKCvJPU9TommTBtJ2WJtSTI0pNbHNH5lI0QiK/e3NbmR31zTNJbm4Pl/4vrzn+X4/uXvunrsIAhcXFxeXOXIKwianIGwyO4cpctbWbqYAAQoQcNbWbjY7T0V1p65uCwWYYoQgIwQpwNSdurotZueqiGRRtFGAR0r5HAiPZFG0mZ2vrHKL4jYKkFCXz4GQcIviNrNzlkWyKDoowLPVyudAeCaLosPsvCWVi5C9FGBZXTZ0rBtDx7r1ICy7CNlrdu6SyC1JHYyQ1+qSkydPYzL1EpOplzh58rTe2fDaLUkdemMGx9PO4EQa9VzpfnlFAX5gAG/V5e6fO4+pTPY/vn/uvBYCwFsZ4Hv1uO8FAJmQEwxgRV0q3HdZU15xuO+yHoQVmZATuWNXPQCZkF5Nkfp6nL12c9Xyimev3URWX68BIRPSq4xfzQAslJBL6vBDDQ0YGRhcs7ziyMAgDjU0aBdHQi4JgmCpSgC9gvABA7ihDu3Zaseo+27B5RVH3XfRs9Wud0ncCASf/l5VAPoFoYYBDKrDDje3YMwXWnd5xTFfCIebWzQQhvcfWBwbi1cHgEGr9UMG4FOH9O5ow4VQuOjyihdCYfTuaNNC+PJrHBudNxeAS5KsjJA/1eHu7dyF8QdRw+UVxx9E8d7OXRoIns/bMeCNmAOAAhAG8FAdamRfOyYiiZKVV5yIJHBkX7sWwme7MUDDlQUgA9gpwBN1GP+hw7gYS+ctctXzMK/zHbsYS6P/0GENhKHtDvT/MVEZADLAdgaQVocIHjmKS/Hna/6Slm+v5vVaxy/Fn2PwyFEthOZW9A/4ywvALYp7GCEvNJuarm5MLi0XdCobBZDKZDG5tIyhLu0mitk/Rrco7ilLeUbIQUpIVrOpOXUGk+lXBV/LpQCQymQxmX6Fk6fO6D0sZRkhB0taXpakTkbIG/VkU70X1r2YlQqA4qneC3o7yTeyJHWWpDwFOE4B3mk2NRevFLWalxpAKpPF8MUreu8U3lGA40bLn9XQtdlw9vqtooKWC0Aqk8XZ67eQ2Wx6IM4W093CAPo0K21jI845XUWHLCeAVCaLc04XDjU26u0f+gRBsBTcnklSj+aBw96EUeozFDCVyWLHL568Njp+lPrQY2/SQpCknoIB9AtCDSVk9N/n7pZWnB+ZMByuUp4fmcDhltbcO8NovyDUrOsa+OfLzbS3zYEL4zOml1qvF8Zn0NvmQAowXfSXp9tWqxiffmx6mWIdn36Mt61WsajyiswuYdSGynMAHIBxALGffzTk9x5AZP9HhswBcAAcAAfAAXAAHAAHsGEA/NXzBca+sm1cAPjbT7j43accwIYFsPJrFz7t/GTjAnjyTRPOtddVD4DV/opSqI3eBYzOzwFwABwAB8ABGAIwnnYa8UzXgbgRG53fMAAuLi6u/7P+BlOlIznDJeqvAAAAAElFTkSuQmCC" width="64" height="64"></li>
+			<li class="dock-icon" id="History"><img class="dock-img"  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAEbklEQVR4nO2ab2gTZxzHL7AX9cWQQma5+z00tGA6abuJDQxRh1PKUGYn7MXscGNgB7UvRAQRJkhfiGyDgojgC8WC4otmKCvJPU9TommTBtJ2WJtSTI0pNbHNH5lI0QiK/e3NbmR31zTNJbm4Pl/4vrzn+X4/uXvunrsIAhcXFxeXOXIKwianIGwyO4cpctbWbqYAAQoQcNbWbjY7T0V1p65uCwWYYoQgIwQpwNSdurotZueqiGRRtFGAR0r5HAiPZFG0mZ2vrHKL4jYKkFCXz4GQcIviNrNzlkWyKDoowLPVyudAeCaLosPsvCWVi5C9FGBZXTZ0rBtDx7r1ICy7CNlrdu6SyC1JHYyQ1+qSkydPYzL1EpOplzh58rTe2fDaLUkdemMGx9PO4EQa9VzpfnlFAX5gAG/V5e6fO4+pTPY/vn/uvBYCwFsZ4Hv1uO8FAJmQEwxgRV0q3HdZU15xuO+yHoQVmZATuWNXPQCZkF5Nkfp6nL12c9Xyimev3URWX68BIRPSq4xfzQAslJBL6vBDDQ0YGRhcs7ziyMAgDjU0aBdHQi4JgmCpSgC9gvABA7ihDu3Zaseo+27B5RVH3XfRs9Wud0ncCASf/l5VAPoFoYYBDKrDDje3YMwXWnd5xTFfCIebWzQQhvcfWBwbi1cHgEGr9UMG4FOH9O5ow4VQuOjyihdCYfTuaNNC+PJrHBudNxeAS5KsjJA/1eHu7dyF8QdRw+UVxx9E8d7OXRoIns/bMeCNmAOAAhAG8FAdamRfOyYiiZKVV5yIJHBkX7sWwme7MUDDlQUgA9gpwBN1GP+hw7gYS+ctctXzMK/zHbsYS6P/0GENhKHtDvT/MVEZADLAdgaQVocIHjmKS/Hna/6Slm+v5vVaxy/Fn2PwyFEthOZW9A/4ywvALYp7GCEvNJuarm5MLi0XdCobBZDKZDG5tIyhLu0mitk/Rrco7ilLeUbIQUpIVrOpOXUGk+lXBV/LpQCQymQxmX6Fk6fO6D0sZRkhB0taXpakTkbIG/VkU70X1r2YlQqA4qneC3o7yTeyJHWWpDwFOE4B3mk2NRevFLWalxpAKpPF8MUreu8U3lGA40bLn9XQtdlw9vqtooKWC0Aqk8XZ67eQ2Wx6IM4W093CAPo0K21jI845XUWHLCeAVCaLc04XDjU26u0f+gRBsBTcnklSj+aBw96EUeozFDCVyWLHL568Njp+lPrQY2/SQpCknoIB9AtCDSVk9N/n7pZWnB+ZMByuUp4fmcDhltbcO8NovyDUrOsa+OfLzbS3zYEL4zOml1qvF8Zn0NvmQAowXfSXp9tWqxiffmx6mWIdn36Mt61WsajyiswuYdSGynMAHIBxALGffzTk9x5AZP9HhswBcAAcAAfAAXAAHAAHsGEA/NXzBca+sm1cAPjbT7j43accwIYFsPJrFz7t/GTjAnjyTRPOtddVD4DV/opSqI3eBYzOzwFwABwAB8ABGAIwnnYa8UzXgbgRG53fMAAuLi6u/7P+BlOlIznDJeqvAAAAAElFTkSuQmCC" width="64" height="64"></li>
+			<li class="dock-icon" id="Hours"><img class="dock-img"  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAEbklEQVR4nO2ab2gTZxzHL7AX9cWQQma5+z00tGA6abuJDQxRh1PKUGYn7MXscGNgB7UvRAQRJkhfiGyDgojgC8WC4otmKCvJPU9TommTBtJ2WJtSTI0pNbHNH5lI0QiK/e3NbmR31zTNJbm4Pl/4vrzn+X4/uXvunrsIAhcXFxeXOXIKwianIGwyO4cpctbWbqYAAQoQcNbWbjY7T0V1p65uCwWYYoQgIwQpwNSdurotZueqiGRRtFGAR0r5HAiPZFG0mZ2vrHKL4jYKkFCXz4GQcIviNrNzlkWyKDoowLPVyudAeCaLosPsvCWVi5C9FGBZXTZ0rBtDx7r1ICy7CNlrdu6SyC1JHYyQ1+qSkydPYzL1EpOplzh58rTe2fDaLUkdemMGx9PO4EQa9VzpfnlFAX5gAG/V5e6fO4+pTPY/vn/uvBYCwFsZ4Hv1uO8FAJmQEwxgRV0q3HdZU15xuO+yHoQVmZATuWNXPQCZkF5Nkfp6nL12c9Xyimev3URWX68BIRPSq4xfzQAslJBL6vBDDQ0YGRhcs7ziyMAgDjU0aBdHQi4JgmCpSgC9gvABA7ihDu3Zaseo+27B5RVH3XfRs9Wud0ncCASf/l5VAPoFoYYBDKrDDje3YMwXWnd5xTFfCIebWzQQhvcfWBwbi1cHgEGr9UMG4FOH9O5ow4VQuOjyihdCYfTuaNNC+PJrHBudNxeAS5KsjJA/1eHu7dyF8QdRw+UVxx9E8d7OXRoIns/bMeCNmAOAAhAG8FAdamRfOyYiiZKVV5yIJHBkX7sWwme7MUDDlQUgA9gpwBN1GP+hw7gYS+ctctXzMK/zHbsYS6P/0GENhKHtDvT/MVEZADLAdgaQVocIHjmKS/Hna/6Slm+v5vVaxy/Fn2PwyFEthOZW9A/4ywvALYp7GCEvNJuarm5MLi0XdCobBZDKZDG5tIyhLu0mitk/Rrco7ilLeUbIQUpIVrOpOXUGk+lXBV/LpQCQymQxmX6Fk6fO6D0sZRkhB0taXpakTkbIG/VkU70X1r2YlQqA4qneC3o7yTeyJHWWpDwFOE4B3mk2NRevFLWalxpAKpPF8MUreu8U3lGA40bLn9XQtdlw9vqtooKWC0Aqk8XZ67eQ2Wx6IM4W093CAPo0K21jI845XUWHLCeAVCaLc04XDjU26u0f+gRBsBTcnklSj+aBw96EUeozFDCVyWLHL568Njp+lPrQY2/SQpCknoIB9AtCDSVk9N/n7pZWnB+ZMByuUp4fmcDhltbcO8NovyDUrOsa+OfLzbS3zYEL4zOml1qvF8Zn0NvmQAowXfSXp9tWqxiffmx6mWIdn36Mt61WsajyiswuYdSGynMAHIBxALGffzTk9x5AZP9HhswBcAAcAAfAAXAAHAAHsGEA/NXzBca+sm1cAPjbT7j43accwIYFsPJrFz7t/GTjAnjyTRPOtddVD4DV/opSqI3eBYzOzwFwABwAB8ABGAIwnnYa8UzXgbgRG53fMAAuLi6u/7P+BlOlIznDJeqvAAAAAElFTkSuQmCC" width="64" height="64"></li>
+			<li class="dock-icon" id="Staff"><img class="dock-img"  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAEbklEQVR4nO2ab2gTZxzHL7AX9cWQQma5+z00tGA6abuJDQxRh1PKUGYn7MXscGNgB7UvRAQRJkhfiGyDgojgC8WC4otmKCvJPU9TommTBtJ2WJtSTI0pNbHNH5lI0QiK/e3NbmR31zTNJbm4Pl/4vrzn+X4/uXvunrsIAhcXFxeXOXIKwianIGwyO4cpctbWbqYAAQoQcNbWbjY7T0V1p65uCwWYYoQgIwQpwNSdurotZueqiGRRtFGAR0r5HAiPZFG0mZ2vrHKL4jYKkFCXz4GQcIviNrNzlkWyKDoowLPVyudAeCaLosPsvCWVi5C9FGBZXTZ0rBtDx7r1ICy7CNlrdu6SyC1JHYyQ1+qSkydPYzL1EpOplzh58rTe2fDaLUkdemMGx9PO4EQa9VzpfnlFAX5gAG/V5e6fO4+pTPY/vn/uvBYCwFsZ4Hv1uO8FAJmQEwxgRV0q3HdZU15xuO+yHoQVmZATuWNXPQCZkF5Nkfp6nL12c9Xyimev3URWX68BIRPSq4xfzQAslJBL6vBDDQ0YGRhcs7ziyMAgDjU0aBdHQi4JgmCpSgC9gvABA7ihDu3Zaseo+27B5RVH3XfRs9Wud0ncCASf/l5VAPoFoYYBDKrDDje3YMwXWnd5xTFfCIebWzQQhvcfWBwbi1cHgEGr9UMG4FOH9O5ow4VQuOjyihdCYfTuaNNC+PJrHBudNxeAS5KsjJA/1eHu7dyF8QdRw+UVxx9E8d7OXRoIns/bMeCNmAOAAhAG8FAdamRfOyYiiZKVV5yIJHBkX7sWwme7MUDDlQUgA9gpwBN1GP+hw7gYS+ctctXzMK/zHbsYS6P/0GENhKHtDvT/MVEZADLAdgaQVocIHjmKS/Hna/6Slm+v5vVaxy/Fn2PwyFEthOZW9A/4ywvALYp7GCEvNJuarm5MLi0XdCobBZDKZDG5tIyhLu0mitk/Rrco7ilLeUbIQUpIVrOpOXUGk+lXBV/LpQCQymQxmX6Fk6fO6D0sZRkhB0taXpakTkbIG/VkU70X1r2YlQqA4qneC3o7yTeyJHWWpDwFOE4B3mk2NRevFLWalxpAKpPF8MUreu8U3lGA40bLn9XQtdlw9vqtooKWC0Aqk8XZ67eQ2Wx6IM4W093CAPo0K21jI845XUWHLCeAVCaLc04XDjU26u0f+gRBsBTcnklSj+aBw96EUeozFDCVyWLHL568Njp+lPrQY2/SQpCknoIB9AtCDSVk9N/n7pZWnB+ZMByuUp4fmcDhltbcO8NovyDUrOsa+OfLzbS3zYEL4zOml1qvF8Zn0NvmQAowXfSXp9tWqxiffmx6mWIdn36Mt61WsajyiswuYdSGynMAHIBxALGffzTk9x5AZP9HhswBcAAcAAfAAXAAHAAHsGEA/NXzBca+sm1cAPjbT7j43accwIYFsPJrFz7t/GTjAnjyTRPOtddVD4DV/opSqI3eBYzOzwFwABwAB8ABGAIwnnYa8UzXgbgRG53fMAAuLi6u/7P+BlOlIznDJeqvAAAAAElFTkSuQmCC" width="64" height="64"></li>
 		</ul>
 	</div>
 </div>

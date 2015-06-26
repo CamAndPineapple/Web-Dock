@@ -10,19 +10,33 @@
 */
 
 body {
+	background-color: #000;
 	margin: 0;
 	padding: 0;
 }
 
 .page-title {
+	margin: 0;
+	padding-top: 30px;
+	font-family: 'Open Sans'; sans-serif;
+	font-weight: 300;
+	color: #FFC184;
 	text-align: center;
 	font-size: 50px;
 }
 
-.test-div {
+.page-kicker {
+	margin-top: 50px;
+	color: #fff;
+	text-align: center;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+}
+
+#body-div {
 	width: 100%;
-	height: 800px;
-	background-color: #fff;
+	height: 100%;
+	background-color: #000;
 }
 
 #title-div {
@@ -44,21 +58,41 @@ body {
 		text-align: center;
 	}
 
+
+/*  
+** Code snippet
+*/
+	
+	.code {
+		font-family: 'Lato'; sans-serif;
+		margin: 0 auto;
+		margin-top: 50px;
+		margin-bottom: 100px;
+		padding: 20px;
+		width: 600px;
+		background-color: #000;
+		color: #D2FB5B;
+		border: 1px solid #D2FB5B;
+		border-radius: 3px;
+	}
+
+
 /*  
 ** Toolbar 
 */
 
 .toolbar-container {
 	position: fixed;
+	padding-top: 20px;
   	bottom: 0px;
  	width: 100%;
-	height: 90px;
-	background-color: #fff;
+	height: 68px;
+	background-color: #000;
 	text-align: center;
 }
 	
 	.toolbar {
-		height: 90px;
+		height: 68px;
 		margin: 0 auto;
 		display: inline-block;
 		border-radius: 3px;
@@ -68,6 +102,7 @@ body {
 		  background:     -ms-linear-gradient(90deg, #485563 10%, #29323c 90%); /* IE10 */
 		  background:      -o-linear-gradient(90deg, #485563 10%, #29323c 90%); /* Opera 11.10+ */
 		  background:         linear-gradient(90deg, #485563 10%, #29323c 90%); /* W3C */
+
 		  
 	}
 
@@ -93,8 +128,8 @@ body {
 			}
 
 			.dock-img {
-				height: 55px;
-				width: 55px;
+				height: 45px;
+				width: 45px;
 				
 			}
 

@@ -4,9 +4,13 @@
 
 
 var elements = document.getElementsByClassName('dock-icon');
+/*
+var js = document.getElementById('js');
+var bodyDiv = document.getElementById('body-div');
+*/
 var titleDiv = document.createElement("div");
 // assign id to edit div in custom.css
-titleDiv.id = "title-div"
+titleDiv.id = "title-div";
 var arrayOfIds = [];
 
 
@@ -34,3 +38,12 @@ for (var i = 0; i < arrayOfIds.length; i++) {
 		};
 	})(i), false);
 }
+
+/*function showCode() {
+
+
+}
+
+js.addEventListener('click', showCode, false); 
+
+*/

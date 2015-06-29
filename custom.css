@@ -1,12 +1,15 @@
-/*
- *
- **	Custom jQuery  
- **	CSS relating to each component is indented
- *
- */ 
+/* --------------------------------------------
+Custom CSS for Web Dock
+
+Version: 	1.0
+Author:		Camden Rudisill	
+License: 	MIT License (see LICENSE file)
+----------------------------------------------- */
+
 
 /*  
-** Global settings 
+** Main Page Content 
+* (Not necessary for Dock usage)
 */
 
 body {
@@ -15,7 +18,13 @@ body {
 	padding: 0;
 }
 
-.page-title {
+#body-div {
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+}
+
+	.page-title {
 	margin: 0;
 	padding-top: 30px;
 	letter-spacing: 7px;
@@ -24,30 +33,194 @@ body {
 	color: #FFC184;
 	text-align: center;
 	font-size: 50px;
-}
+	}
 
-.page-kicker {
-	margin-top: 50px;
-	color: #fff;
-	text-align: center;
-	font-family: 'Lato', sans-serif;
-	font-weight: 300;
-}
+	.page-kicker {
+		margin-top: 50px;
+		color: #fff;
+		text-align: center;
+		font-family: 'Lato', sans-serif;
+		font-weight: 300;
+	}
 
-#body-div {
-	width: 100%;
-	height: 100%;
-	background-color: #000;
-}
 
-#title-div {
-	margin-top: -110px;
-	width: 100%;
-	height: 30px;
-	background-color: #343E49;
-	border-radius: 3px;
-}
+	/*  
+	** Code snippet
+	*/
 	
+	#code {
+		margin: 0 auto;
+		margin-top: 50px;
+		margin-bottom: 100px;
+		padding: 20px;
+		width: 600px;
+		background-color: #000;
+		border: 1px solid #D2FB5B;
+		border-radius: 3px;
+		text-align: left;
+	}
+
+		.code-text {
+			font-family: 'Source Code Pro', sans-serif;
+			font-size: 14px;
+			font-weight: 200;
+			line-height: 17px;
+			color: #D2FB5B;
+
+		}
+
+		.hidden {
+			display: none;
+		}
+
+
+/*  
+** DOCK 
+*/
+
+.dock-container {
+	position: fixed;
+	padding-top: 20px;
+  	bottom: 0px;
+ 	width: 100%;
+	height: 68px;
+	background-color: #000;
+	text-align: center;
+}
+
+/* @group Label */
+/* This is just a wrapper in order to center the actual label horizontally.
+   You may need to adjust the width negative margin if you have really long
+   labels. */
+.dock em {
+	position: absolute;
+	top: -40px;
+	left: 50%;
+	display: none;
+	width: 150px;
+	margin-left: -75px;
+	text-align: center;
+}
+
+/* Generates the little arrow at the bottom of the label. */
+.dock em:after {
+	content: " ";
+	position: absolute;
+	bottom: -6px;
+	left: 50%;
+	margin-left: -6px;
+	width: 0;
+	height: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid #1B1B1B;
+	border-bottom: none;
+}
+
+/* This is the actual label. */
+.dock em span {
+	display: inline-block;
+	padding: 5px 12px;
+	font-family: 'Lato', sans-serif;
+	font-weight: 200;
+	letter-spacing: 1px;
+	font-style: normal;
+	font-size: 14px;
+	color: #FFF;
+	background: #1B1B1B;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	-o-border-radius: 12px;
+	border-radius: 2px;
+}
+
+.dock li:hover em, .dock li a:focus em {
+	display: block;
+}
+/* @end */
+
+
+	
+	.dock {
+	display: inline-block;
+	bottom: 0;
+	z-index: 10;
+	text-align: center;
+		height: 68px;
+		margin: 0 auto;
+		border-radius: 3px;
+    	background-color: #1B1B1B;
+		  
+	}
+
+	.dock ul {
+	position: relative;
+	display: inline-block;
+	padding: 1px 10px;
+	margin: 0;
+	background: url(images/dock-m.png) repeat-x bottom;
+}
+
+.dock li {
+	display: inline-block;
+	position: relative;
+	margin: 0 1px;
+	margin-bottom: 15px;
+	vertical-align: baseline;
+	-webkit-box-reflect: below -16px -webkit-gradient(
+		linear, left top, left bottom,
+		from(transparent),
+		color-stop(91%, rgba(255, 255, 255, .1)),
+		color-stop(91.01%, transparent),
+		to(transparent)
+	);
+}
+
+.dock a {
+	display: inline-block;
+	cursor: default;
+	outline: none;
+}
+
+		.dock-icons-list {
+			list-style: none;
+			padding: 0;
+			margin: 0
+
+			
+		}
+
+			.dock-icon {
+
+				float: left;
+				padding: 20px;	
+
+				
+
+			}
+
+			
+
+	#title-div {
+		margin-top: -110px;
+		padding-right: 10px;  
+		padding-left: 10px;  
+		width: 100%;
+		height: 30px;
+		background-color: #343E49;
+		border-radius: 3px;
+	}
+	
+	/* Adds triangle to dock title-div on hover */
+	#triangle-div {
+		margin: 0 auto;
+		width: 0; 
+		height: 0; 
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-top: 10px solid #343E49;
+	}
+
 	.title-text {
 		margin: 0;
 		padding-top: 2px;
@@ -59,87 +232,7 @@ body {
 		text-align: center;
 	}
 
-
-/*  
-** Code snippet
-*/
 	
-	#code {
-		font-family: 'Lato'; sans-serif;
-		margin: 0 auto;
-		margin-top: 50px;
-		margin-bottom: 100px;
-		padding: 20px;
-		width: 600px;
-		background-color: #000;
-		color: #D2FB5B;
-		border: 1px solid #D2FB5B;
-		border-radius: 3px;
-		text-align: left;
-		line-height: 17px;
-	}
-
-	.hidden {
-		display: none;
-	}
-
-
-/*  
-** Toolbar 
-*/
-
-.toolbar-container {
-	position: fixed;
-	padding-top: 20px;
-  	bottom: 0px;
- 	width: 100%;
-	height: 68px;
-	background-color: #000;
-	text-align: center;
-}
-	
-	.toolbar {
-		height: 68px;
-		margin: 0 auto;
-		display: inline-block;
-		border-radius: 3px;
-    	/* color gradient for toolbar */
-		  background: -webkit-linear-gradient(90deg, #485563 10%, #29323c 90%); /* Chrome 10+, Saf5.1+ */
-		  background:    -moz-linear-gradient(90deg, #485563 10%, #29323c 90%); /* FF3.6+ */
-		  background:     -ms-linear-gradient(90deg, #485563 10%, #29323c 90%); /* IE10 */
-		  background:      -o-linear-gradient(90deg, #485563 10%, #29323c 90%); /* Opera 11.10+ */
-		  background:         linear-gradient(90deg, #485563 10%, #29323c 90%); /* W3C */
-
-		  
-	}
-
-		.dock-icons-list {
-			list-style: none;
-			padding: 0;
-			margin: 0;
-
-			
-		}
-
-			.dock-icon {
-				float: left;
-				padding: 8px;	
-
-				
-
-			}
-
-			.dock-icon:hover {
-
-
-			}
-
-			.dock-img {
-				height: 45px;
-				width: 45px;
-				
-			}
-
 
 
 

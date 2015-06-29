@@ -18,6 +18,7 @@ body {
 .page-title {
 	margin: 0;
 	padding-top: 30px;
+	letter-spacing: 7px;
 	font-family: 'Open Sans'; sans-serif;
 	font-weight: 300;
 	color: #FFC184;

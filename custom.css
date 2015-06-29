@@ -92,9 +92,9 @@ body {
 /* This is just a wrapper in order to center the actual label horizontally.
    You may need to adjust the width negative margin if you have really long
    labels. */
-.dock em {
+.label {
 	position: absolute;
-	top: -40px;
+	top: -50px;
 	left: 50%;
 	display: none;
 	width: 150px;
@@ -103,7 +103,7 @@ body {
 }
 
 /* Generates the little arrow at the bottom of the label. */
-.dock em:after {
+.label:after {
 	content: " ";
 	position: absolute;
 	bottom: -6px;
@@ -118,7 +118,7 @@ body {
 }
 
 /* This is the actual label. */
-.dock em span {
+.label span {
 	display: inline-block;
 	padding: 5px 12px;
 	font-family: 'Lato', sans-serif;
@@ -134,7 +134,7 @@ body {
 	border-radius: 2px;
 }
 
-.dock li:hover em, .dock li a:focus em {
+.dock li:hover p, .dock li a:focus p {
 	display: block;
 }
 /* @end */

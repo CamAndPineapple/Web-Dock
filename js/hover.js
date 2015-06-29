@@ -3,13 +3,15 @@
  **/
 
 
-var elements = document.getElementsByClassName('icon-title');
-//var titleDiv = document.createElement("div");
-//var triangle = document.createElement("div");
+var elements = document.getElementsByClassName('dock-item');
+var label = document.getElementsByClassName('label');
+var titleDiv = document.createElement("span");
+//var triangle = document.createElpent("div");
 var codeSnippet = document.getElementById("code");
 var js = document.getElementById("js");
 var arrayOfIds = [];
 js.style.cursor = "pointer";
+var title;
 
 // assign id to enable easier editing in custom.css
 //titleDiv.className = "title-div";
@@ -31,14 +33,17 @@ for (var i = 0; i < arrayOfIds.length; i++) {
 	// add title-div when mouse over
 	elements[i].addEventListener('mouseover', (function(i) {
 		return function() {
-			elements.innerHTML = '<span>' + arrayOfIds[i] + '</span>';
+			console.log(title);
+			titleDiv.innerHTML = arrayOfIds[i];
+			label[i].appendChild(titleDiv);
+
 		};
 	})(i), false);
 
-	// remove title-div when mouse out				
-	elements[i].addEventListener('mouseout', (function(i) {
+	// rpove title-div when mouse out				
+	label[i].addEventListener('mouseout', (function(i) {
 		return function() {
-			elements[i].removeChild(titleDiv);
+			elements[i].removeChild(title);
 		};
 	})(i), false);
 }

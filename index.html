@@ -15,7 +15,7 @@
     <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,300,200' rel='stylesheet' type='text/css'>
 
 
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elpents and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -29,18 +29,18 @@
 <div id="body-div">
     <h1 class="page-title"> Navigation Dock </h1>
     <p class="page-kicker"> A navigation dock fixed to the bottom of the page, <br></br>
-        inspired by Apple's OS X Yosemite dock </p>
+        inspired by Apple's OS X Yospite dock </p>
     <p class="page-kicker"> Made with pure <span id="js" style="color:#FFFF5B;">Javascript</span> and <span id="css" style="color:#139AD2">CSS</span></p>
 
     <div id="code" class="hidden">
         <div class="code-text">
-            var elements = document.getElementsByClassName('dock-icon');
+            var elpents = document.getElpentsByClassName('dock-icon');
             <br></br>
-            var js = document.getElementById('js');
+            var js = document.getElpentById('js');
             <br></br>
-            var bodyDiv = document.getElementById('body-div');
+            var bodyDiv = document.getElpentById('body-div');
             <br></br>
-            var titleDiv = document.createElement("div");
+            var titleDiv = document.createElpent("div");
             <br></br>
             <br></br>
              <span style="color:#A5A5A5">// assign id to edit div in custom.css</span>
@@ -54,9 +54,9 @@
             <br></br>
              <span style="color:#A5A5A5">// ids are used as the title of the dock icon</span>
             <br></br>
-            for (var i = 0; i < elements.length; i++) {
+            for (var i = 0; i < elpents.length; i++) {
             <br></br>
-            arrayOfIds.push(elements[i].id);
+            arrayOfIds.push(elpents[i].id);
             <br></br>
             }
             <br></br>
@@ -68,26 +68,26 @@
             <br></br>
              <span style="color:#A5A5A5">// add title-div when mouse over</span>
             <br></br>
-            elements[i].addEventListener('mouseover', (function(i) {
+            elpents[i].addEventListener('mouseover', (function(i) {
             <br></br>
                 return function() {
                 <br></br>
                     titleDiv.innerHTML = arrayOfIds[i];
                     <br></br>
-                    elements[i].appendChild(titleDiv);
+                    elpents[i].appendChild(titleDiv);
                     <br></br>
                 };
                 <br></br>
             })(i), false);
                 <br></br>
                 <br></br>
-             <span style="color:#A5A5A5">// remove title-div when mouse out</span>  
+             <span style="color:#A5A5A5">// rpove title-div when mouse out</span>  
              <br></br>           
-            elements[i].addEventListener('mouseout', (function(i) {
+            elpents[i].addEventListener('mouseout', (function(i) {
             <br></br>
                 return function() {
                 <br></br>
-                    elements[i].removeChild(titleDiv);
+                    elpents[i].rpoveChild(titleDiv);
                     <br></br>
                 };
                 <br></br>
@@ -105,17 +105,18 @@
 	<div class="dock">
 		<ul>
 
-			<li id="Home">
+			<li class="dock-item" id="Home">
                 <a href="#home">
-                <em><span>Home</span></em>
-                <img src="../images/home.png">
+                    <p class="label">
+                    </p>
+                    <img src="../images/home.png">
                 </a>
             </li>
 
-            <li id="About"><a href="#home"><em><span>About</span></em><img src="../images/home.png"></a></li>
-            <li id="Store"><a href="#home"><em><span>Store</span></em><img src="../images/home.png"></a></li>
-            <li id="History"><a href="#home"><em><span>History</span></em><img src="../images/home.png"></a></li>
-            <li id="Contact"><a href="#home"><em><span>Contact</span></em><img src="../images/home.png"></a></li>
+            <li class="dock-item" id="About"><a href="#home"><p class="label"></p><img src="../images/home.png"></a></li>
+            <li class="dock-item" id="Store"><a href="#home"><p class="label"></p><img src="../images/home.png"></a></li>
+            <li class="dock-item" id="History"><a href="#home"><p class="label"></p><img src="../images/home.png"></a></li>
+            <li class="dock-item" id="Contact"><a href="#home"><p class="label"></p><img src="../images/home.png"></a></li>
 		</ul>
 	</div> <!-- end dock -->
 </div> <!-- end dock-container -->

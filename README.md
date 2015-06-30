@@ -2,6 +2,8 @@
 #### A navigation dock for your website, 
 #### inspired by Apple's OS X Yosemite dock.
 
+![alt tag](https://github.com/theCamDen/Web-Dock/master/images/dock.png)
+
 The majority of websites feature a standard
 navigation bar fixed to the top of the page.
 Observing this made me think about whether

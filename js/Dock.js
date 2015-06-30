@@ -12,6 +12,11 @@ var arrayOfIds = [];
 js.style.cursor = "pointer";
 var title;
 
+// down arrow attached to label 
+// assigned class in order to style in Dock.css
+var downArrow = document.createElement("div");
+downArrow.className = "down-arrow";
+
 
 // store each dock icon's id in an array
 // ids are used as the title of the dock icon
@@ -29,12 +34,14 @@ for (var i = 0; i < arrayOfIds.length; i++) {
 		return function() {
 			title.innerHTML = arrayOfIds[i];
 			label[i].appendChild(title);
+			label[i].appendChild(downArrow);
 
 		};
 	})(i), false);
 
 }
 
+// show js code snippet when javascript clicked
 function showCode() {
 	if (codeSnippet.className === "hidden") {
 		codeSnippet.className = "";

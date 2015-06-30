@@ -69,9 +69,7 @@ body {
 
 		}
 
-		.hidden {
-			display: none;
-		}
+		
 
 
 /*  
@@ -164,7 +162,36 @@ resolution doesn't degrade on hover */
 	text-align: center;
 }
 
+.hidden {
+	display: none;
+}
 
+.folder {
+	position: absolute;
+	top: -150px;
+	left: 50%;
+	display: none;
+	width: 150px;
+	margin-left: -75px;
+	text-align: center;
+}
+
+.folder span {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	font-family: 'Lato', sans-serif;
+	font-weight: 200;
+	letter-spacing: 1px;
+	font-style: normal;
+	font-size: 14px;
+	color: #FFF;
+	background: #1B1B1B;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	-o-border-radius: 12px;
+	border-radius: 2px;
+}
 
 /* actual label */
 .label span {

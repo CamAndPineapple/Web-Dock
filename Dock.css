@@ -168,24 +168,29 @@ resolution doesn't degrade on hover */
 
 .folder {
 	position: absolute;
-	top: -150px;
-	left: 50%;
+	top: -245px;
+	left: 18%;
 	display: none;
 	width: 150px;
 	margin-left: -75px;
 	text-align: center;
 }
 
+.folder span::after {
+	content: "Folder";
+}
+
 .folder span {
 	display: inline-block;
-	width: 100px;
-	height: 100px;
+	width: 300px;
+	height: 200px;
 	font-family: 'Lato', sans-serif;
 	font-weight: 200;
 	letter-spacing: 1px;
 	font-style: normal;
 	font-size: 14px;
 	color: #FFF;
+	padding-top: 10px;
 	background: #1B1B1B;
 	-webkit-border-radius: 12px;
 	-moz-border-radius: 12px;

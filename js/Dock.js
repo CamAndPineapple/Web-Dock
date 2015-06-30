@@ -38,9 +38,15 @@ for (var i = 0; i < numOfDockItems.length; i++) {
 	// add title-div when mouse over
 	elements[i].addEventListener('mouseover', (function(i) {
 		return function() {
+			if (label[i].nextSibling.firstChild === folder) {
+				label[i].nextSibling.removeChild(folder);
+
+
+			} else {
 			title.innerHTML = numOfDockItems[i];
 			label[i].appendChild(title);
 			label[i].appendChild(downArrow);
+		}
 
 
 		};
@@ -52,9 +58,16 @@ for (var i = 0; i < numOfDockItems.length; i++) {
 // if(folder), pop up folder when icon clicked on
 		elements[i].addEventListener('click', (function(i){
 			return function() {
-			label[i].nextSibling.appendChild(folder);
-
-		};
+				if (label[i].nextSibling.firstChild === folder) {
+					label[i].nextSibling.removeChild(folder);
+				} else if (label[i].nextSibling.className !== "folder") {
+					return;
+				} else {
+					label[i].removeChild(title);
+					label[i].removeChild(downArrow);
+					label[i].nextSibling.appendChild(folder);
+				}
+			};
 		})(i), false);
 
 }

@@ -12,6 +12,7 @@ function showCode(code) {
 	if (code.id === "js") {
 		if (JScodeSnippet.className === "hidden") {
 			JScodeSnippet.className = "code";
+			CSScodeSnippet.className = "hidden";
 		} else {
 			JScodeSnippet.className = "hidden";
 		}
@@ -19,6 +20,8 @@ function showCode(code) {
 
 		if (CSScodeSnippet.className === "hidden") {
 			CSScodeSnippet.className = "code";
+			JScodeSnippet.className = "hidden";
+
 		} else {
 			CSScodeSnippet.className = "hidden";
 		}

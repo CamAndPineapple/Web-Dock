@@ -10,14 +10,14 @@ navigation bar fixed to the top of the page.
 Observing this made me think about whether
 this was the best form of website navigation,
 and being that I use my macbook everyday,
-I wondered why desktops don't use a navigation
-at the top of a page, but rather the bottom. 
+I wondered why desktops use a bottom dock
+but websites never do. 
 
 ##### Why I built this:
-I decided to make this dock as an experiment to
-not only get better at javascript and css,
-but to see how a apple-esque dock would work
-on a webpage. 
+I decided to make this dock as an experiment 
+to see how a apple-esque dock would work
+on a webpage, and hopefully get better
+at vanilla javascript and css in the process.
 
 ##### Conclusion:
 As of now, I don't really see it being better,

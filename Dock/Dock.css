@@ -5,16 +5,20 @@ Author:		Camden Rudisill
 License: 	MIT License (see LICENSE file)
 ----------------------------------------------- */
 
-
-
-
-		
-
-
 /*  
 ** DOCK 
 */
 
+/* blocks off the bottom of the web page for dock to live in */
+.dock-container {
+	position: fixed;
+	padding-top: 20px;
+  	bottom: 0px;
+ 	width: 100%;
+	height: 68px;
+	background-color: #000;
+	text-align: center;
+}
 
 	.dock {
 	display: inline-block;
@@ -36,49 +40,25 @@ License: 	MIT License (see LICENSE file)
 	background: url(images/dock-m.png) repeat-x bottom;
 }
 
-.dock li {
-	display: inline-block;
-	position: relative;
-	margin: 0 1px;
-	margin-bottom: 15px;
-	padding: 4px;
+		.dock li {
+			display: inline-block;
+			position: relative;
+			margin: 0 1px;
+			margin-bottom: 15px;
+			padding: 4px;
 
-}
+		}
 
-.dock li:hover p {
-	display: block;
-}	
+			.dock li:hover p {
+				display: block;
+			}	
 
-.dock a {
-	display: inline-block;
-	cursor: default;
-	outline: none;
-}
+		.dock a {
+			display: inline-block;
+			cursor: default;
+			outline: none;
+		}
 
-
-.dock-container {
-	position: fixed;
-	padding-top: 20px;
-  	bottom: 0px;
- 	width: 100%;
-	height: 68px;
-	background-color: #000;
-	text-align: center;
-}
-
-.divider {
-	display: inline-block;
-	width: 1px;
-	height: 54px;
-	background-color: #574E4E
-}
-
-.space {
-	display: inline-block;
-	height: 50px;
-	width: 30px;
-
-}
 
 
 /* Set image smaller than native so 
@@ -90,7 +70,7 @@ resolution doesn't degrade on hover */
 }
 .dock img:hover { transform: scale(1.1); }
 
-/* label container */
+/* Center the label */
 .label {
 	position: absolute;
 	top: -60px;
@@ -101,10 +81,24 @@ resolution doesn't degrade on hover */
 	text-align: center;
 }
 
-.hidden {
-	display: none;
+/* label size and shape */
+.label span {
+	display: inline-block;
+	padding: 5px 12px;
+	font-family: 'Lato', sans-serif;
+	font-weight: 200;
+	letter-spacing: 1px;
+	font-style: normal;
+	font-size: 14px;
+	color: #FFF;
+	background: #1B1B1B;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	-o-border-radius: 12px;
+	border-radius: 2px;
 }
 
+/* center the folder */
 .folder {
 	position: absolute;
 	top: -245px;
@@ -115,10 +109,13 @@ resolution doesn't degrade on hover */
 	text-align: center;
 }
 
+/* add folder title */
 .folder span::after {
 	content: "Folder";
 }
 
+
+/* folder size and shape */
 .folder span {
 	display: inline-block;
 	width: 300px;
@@ -137,24 +134,7 @@ resolution doesn't degrade on hover */
 	border-radius: 2px;
 }
 
-/* actual label */
-.label span {
-	display: inline-block;
-	padding: 5px 12px;
-	font-family: 'Lato', sans-serif;
-	font-weight: 200;
-	letter-spacing: 1px;
-	font-style: normal;
-	font-size: 14px;
-	color: #FFF;
-	background: #1B1B1B;
-	-webkit-border-radius: 12px;
-	-moz-border-radius: 12px;
-	-o-border-radius: 12px;
-	border-radius: 2px;
-}
-
-	/* Adds triangle to dock title-div on hover */
+	/* Adds down arrow to dock label on hover */
 	.down-arrow {
 		margin: 0 auto;
 		width: 0; 
@@ -164,16 +144,25 @@ resolution doesn't degrade on hover */
 		border-top: 8px solid #1B1B1B;
 	}
 
-	.title-text {
-		margin: 0;
-		padding-top: 2px;
-		color: #fff;
-		font-family: 'Roboto';
-		font-weight: 300;
-		font-size: 15px;
-		line-height: 30px;
-		text-align: center;
-	}
+/*  
+** OPTIONAL DOCK ITEMS
+*/
+
+/* creates divider line between dock items like in the preview */
+.divider {
+	display: inline-block;
+	width: 1px;
+	height: 54px;
+	background-color: #574E4E
+}
+
+/* creates a gap between dock items if wanted, 
+   html format is the same as divider */
+.space {
+	display: inline-block;
+	height: 50px;
+	width: 30px;
+}
 
 	
 

@@ -1,7 +1,6 @@
 /* --------------------------------------------
 Custom CSS for Web Dock
 
-Version: 	1.0
 Author:		Camden Rudisill	
 License: 	MIT License (see LICENSE file)
 ----------------------------------------------- */
@@ -48,7 +47,7 @@ body {
 	** Code snippet
 	*/
 	
-	#code {
+	.code {
 		margin: 0 auto;
 		margin-top: 50px;
 		margin-bottom: 100px;

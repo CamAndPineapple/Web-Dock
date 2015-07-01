@@ -39,6 +39,15 @@ body {
 		font-weight: 300;
 	}
 
+	.github-link a {
+		color: #4078C0;
+		text-decoration: none;
+	}
+
+	.github-link a:hover {
+		color: #FFFF58;
+	}
+
 
 	/*  
 	** Code snippet

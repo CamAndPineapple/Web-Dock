@@ -7,7 +7,9 @@
     <title> Navigation Dock </title> 
 
     <!-- Dock CSS -->
-    <link href="Dock.css" rel="stylesheet">
+    <link href="../Dock/Dock.css" rel="stylesheet">
+    <!-- code CSS -->
+    <link href="../preview/code.css" rel="stylesheet">
 
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
@@ -25,6 +27,10 @@
 </head>
     
 <body>
+
+
+<!-- DOCK PREVIEW - Not Related to DOCK html -->
+<!-- find DOCK STARTS HERE -->
 
 <div id="body-div">
     <h1 class="page-title"> Navigation Dock </h1>
@@ -166,11 +172,12 @@
 
 
 <!-- DOCK STARTS HERE -->
-<!-- 1. Change the li id to the title of the dock item -->
+<!-- 1. Change the li id to the title of your dock item -->
 <!-- 2. Change the img to whatever icon you want for the item -->
+<!-- 3. Add <p class="folder"> after <p class="label"> to add a folder to dock item -->
 
 <div class="dock-container">
-	<div class="dock"
+	<div class="dock">
 		<ul>
 			<li class="dock-item" id="Home"><a href=#><p class="label"></p><img src="../images/Home-64.png"></a></li>
             <li class="dock-item" id="Calendar"><a href="#home"><p class="label"></p><img src="../images/Calendar-64.png"></a></li>
@@ -184,8 +191,8 @@
 </div> <!-- end dock-container -->
 
 <!-- JS for hover functionality -->
-<script src="../js/Dock.js"></script>
-<script src="../js/code.js"></script>
+<script src="../Dock/Dock.js"></script>
+<script src="../preview/code.js"></script>
 
 </body>
 </html

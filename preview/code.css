@@ -1,0 +1,61 @@
+/*  
+** Main Page Content 
+* (Not necessary for Dock usage)
+*/
+
+body {
+	background-color: #000;
+	margin: 0;
+	padding: 0;
+}
+
+#body-div {
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+}
+
+	.page-title {
+	margin: 0;
+	padding-top: 30px;
+	letter-spacing: 7px;
+	font-family: 'Open Sans'; sans-serif;
+	font-weight: 300;
+	color: #FFC184;
+	text-align: center;
+	font-size: 50px;
+	}
+
+	.page-kicker {
+		margin-top: 50px;
+		color: #fff;
+		text-align: center;
+		font-family: 'Lato', sans-serif;
+		font-weight: 300;
+	}
+
+
+	/*  
+	** Code snippet
+	*/
+	
+	.code {
+		margin: 0 auto;
+		margin-top: 50px;
+		margin-bottom: 100px;
+		padding: 20px;
+		width: 600px;
+		background-color: #000;
+		border: 1px solid #D2FB5B;
+		border-radius: 3px;
+		text-align: left;
+	}
+
+		.code-text {
+			font-family: 'Source Code Pro', sans-serif;
+			font-size: 14px;
+			font-weight: 200;
+			line-height: 17px;
+			color: #D2FB5B;
+
+		}

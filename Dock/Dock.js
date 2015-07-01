@@ -5,7 +5,6 @@ Author:		Camden Rudisill
 License: 	MIT License (see LICENSE file)
 ----------------------------------------------- */
 
-// Dock variables
 var elements = document.getElementsByClassName('dock-item');
 var label = document.getElementsByClassName('label');
 var title = document.createElement('span');
@@ -34,15 +33,15 @@ for (var i = 0; i < numOfDockItems.length; i++) {
 			if (label[i].nextSibling.firstChild === folder) {
 				label[i].nextSibling.removeChild(folder);
 			} else {
-			title.innerHTML = numOfDockItems[i];
-			label[i].appendChild(title);
-			label[i].appendChild(downArrow);
+				title.innerHTML = numOfDockItems[i];
+				label[i].appendChild(title);
+				label[i].appendChild(downArrow);
 			}
 		};
 	})(i), false);
 
 	// if(folder), pop up folder when icon clicked on
-	elements[i].addEventListener('click', (function(i){
+	elements[i].addEventListener('click', (function(i) {
 		return function() {
 			if (label[i].nextSibling.firstChild === folder) {
 				label[i].nextSibling.removeChild(folder);
@@ -55,14 +54,4 @@ for (var i = 0; i < numOfDockItems.length; i++) {
 			}
 		};
 	})(i), false);
-
 }
-
-
-
-
-
-
-
-
-

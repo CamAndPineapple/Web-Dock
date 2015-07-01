@@ -1,4 +1,3 @@
-
 // code text variables 
 var JScodeSnippet = document.getElementById("js-code");
 var CSScodeSnippet = document.getElementById("css-code");
@@ -15,24 +14,22 @@ function showCode(code) {
 			JScodeSnippet.className = "code";
 		} else {
 			JScodeSnippet.className = "hidden";
-		} 
-	} else if (code.id ==="css") {
+		}
+	} else if (code.id === "css") {
 
 		if (CSScodeSnippet.className === "hidden") {
 			CSScodeSnippet.className = "code";
 		} else {
 			CSScodeSnippet.className = "hidden";
-		} 
+		}
 	}
 
 }
 
-js.addEventListener('click', function(){
+js.addEventListener('click', function() {
 	showCode(js);
 }, false);
 
-css.addEventListener('click', function(){
+css.addEventListener('click', function() {
 	showCode(css);
 }, false);
-
-

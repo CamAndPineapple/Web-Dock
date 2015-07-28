@@ -5,16 +5,16 @@ Author:		Camden Rudisill
 License: 	MIT License (see LICENSE file)
 ----------------------------------------------- */
 
-var elements = document.getElementsByClassName('dock-item');
-var label = document.getElementsByClassName('label');
-var title = document.createElement('span');
-var folder = document.createElement('span');
-var numOfDockItems = [];
+var elements = document.getElementsByClassName('dock-item'),
+	label = document.getElementsByClassName('label'),
+	title = document.createElement('span'),
+	folder = document.createElement('span'),
+	numOfDockItems = [];
 
-// down arrow attached to label 
-// assigned class in order to style in Dock.css
-var downArrow = document.createElement("div");
-downArrow.className = "down-arrow";
+	// down arrow attached to label 
+	// assigned class in order to style in Dock.css
+	var downArrow = document.createElement("div");
+	downArrow.className = "down-arrow";
 
 
 // store each dock icon's id in an array

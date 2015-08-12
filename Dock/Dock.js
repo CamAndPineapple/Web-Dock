@@ -4,11 +4,11 @@ Custom Javascript for Web Dock
 Author:		Camden Rudisill	
 License: 	MIT License (see LICENSE file)
 ----------------------------------------------- */
+var Dock = (function(){
 
-var elements = document.getElementsByClassName('dock-item'),
+	var elements = document.getElementsByClassName('dock-item'),
 	label = document.getElementsByClassName('label'),
-	title = document.createElement('span'),
-	folder = document.createElement('span'),
+	span = document.createElement('span'),
 	numOfDockItems = [];
 
 	// down arrow attached to label 
@@ -30,11 +30,11 @@ for (var i = 0; i < numOfDockItems.length; i++) {
 	// add labels to icons when moused over
 	elements[i].addEventListener('mouseover', (function(i) {
 		return function() {
-			if (label[i].nextSibling.firstChild === folder) {
-				label[i].nextSibling.removeChild(folder);
+			if (label[i].nextSibling.firstChild === span) {
+				label[i].nextSibling.removeChild(span);
 			} else {
-				title.innerHTML = numOfDockItems[i];
-				label[i].appendChild(title);
+				span.innerHTML = numOfDockItems[i];
+				label[i].appendChild(span);
 				label[i].appendChild(downArrow);
 			}
 		};
@@ -43,15 +43,16 @@ for (var i = 0; i < numOfDockItems.length; i++) {
 	// if(folder), pop up folder when icon clicked on
 	elements[i].addEventListener('click', (function(i) {
 		return function() {
-			if (label[i].nextSibling.firstChild === folder) {
-				label[i].nextSibling.removeChild(folder);
+			if (label[i].nextSibling.firstChild === span) {
+				label[i].nextSibling.removeChild(span);
 			} else if (label[i].nextSibling.className !== "folder") {
 				return;
 			} else {
-				label[i].removeChild(title);
+				label[i].removeChild(span);
 				label[i].removeChild(downArrow);
-				label[i].nextSibling.appendChild(folder);
+				label[i].nextSibling.appendChild(span);
 			}
 		};
 	})(i), false);
 }
+})();

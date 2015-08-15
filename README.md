@@ -24,4 +24,4 @@ As of now, I don't really see it being better,
 or really having many use-cases at all.
 If you find one, please let me know!
 
-check it out at: http://thecamden.github.io/Web-Dock/
+Check it out at: http://CamAndPineapple.github.io/Web-Dock/
